@@ -15,7 +15,7 @@ function App() {
     try {
       // Kirim URL ke backend untuk generate QR Code
       const response = await axios.post(
-        "https://qr-backend-production-11cf.up.railway.app/generate",
+        "http://203.175.11.111:5000/generate",
         {
           url,
         }
