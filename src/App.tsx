@@ -10,16 +10,11 @@ function App() {
   useEffect(() => {
     document.title = "QR Code Generator - Mastayxz";
   }, []);
-
+  
   const generateQR = async (url: string) => {
     try {
       // Kirim URL ke backend untuk generate QR Code
-      const response = await axios.post(
-        "http://203.175.11.111:5000/generate",
-        {
-          url,
-        }
-      );
+      const response = await axios.post("http://203.175.11.111/generate", { url });
       setQrCode(response.data.qrCode); // Simpan QR Code dari backend
     } catch (error) {
       console.error("Error generating QR code:", error);
